@@ -2,12 +2,16 @@
 
 ## Video Luke smith Notes 
 
+https://www.youtube.com/watch?v=dum7q6UXiCE
+
 ### Exemple simple 
 
 Eire son .md de notes 
 
 Pour convertir en présentation : 
+
 	$ pandoc file.md -t beamer -o file.pdf 
+
 -o : output 
 
 On peut aussi transmettre des "metadonnées", comme le titre, thème etc. 
@@ -16,39 +20,39 @@ On peut aussi transmettre des "metadonnées", comme le titre, thème etc.
 
 Attention mettre espaces entre les lignes : 
 
-+ List item 1  
+	+ List item 1  
 
-+ List item 2 
+	+ List item 2 
 
-+ List item 3 
+	+ List item 3 
 
 ### Metadonnées
 
 Se met entre --- : 
---- 
-title:
-- Benjamin's talk 
-author: 
-- Benjamin Girardot
-theme: 
-- Copenhagen
-colortheme: 
-- albatros,etc
---- 
+
+	--- 
+	title:
+	- Benjamin's talk 
+	author: 
+	- Benjamin Girardot
+	theme: 
+	- Copenhagen
+	colortheme: 
+	- albatros,etc
+	--- 
 
 ### Styles d'écrite : 
 
-<!--
-**bold text** 
-*emphatic text* 
--->
+
+	**bold text** 
+	*emphatic text* 
+
 
 
 ### Images : 
 
- 
 	![nom de l'image](chemin/de/l'image.png)
-	
+
 
 
 ## Citations 
@@ -67,22 +71,22 @@ Previous description : pandoc file.md (--bibliography bib.bib) -t beamer -o file
 
 ## Md to latex classic file 
 
-pandoc file.md (--bibliography bib.bib) -s -o file.pdf 
+	pandoc file.md (--bibliography bib.bib) -s -o file.pdf 
 
 # Exemple review 
 
----
-title:
-- (REVIEW) Natural selection contributes to food web stability
-documentclass:
-- report
-geometry:
-- margin=1in
-linestretch:
-- 1.25
-bibliography:
-- biblio.bib
----
+	---
+	title:
+	- (REVIEW) Natural selection contributes to food web stability
+	documentclass:
+	- report
+	geometry:
+	- margin=1in
+	linestretch:
+	- 1.25
+	bibliography:
+	- biblio.bib
+	---
 
 
 # Automatic created files 
