@@ -1,12 +1,22 @@
 # PANDOC 
 
+## Keywords 
+
++ beamer 
+
++ pandoc 
+
+## Objectifs 
+
+Ce repository donne sous forme brute mon fichier personnel de notes actuel sur l'utilisation de pandoc 
+
 ## Video Luke smith Notes 
 
 https://www.youtube.com/watch?v=dum7q6UXiCE
 
 ### Exemple simple 
 
-Eire son .md de notes 
+Ecrire son .md de notes 
 
 Pour convertir en présentation : 
 
