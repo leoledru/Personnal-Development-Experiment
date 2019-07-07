@@ -46,9 +46,9 @@ colortheme:
 
 ### Images : 
 
-<!-- 
-![nom de l'image](chemin/de/l'image.png)
--->
+ 
+	![nom de l'image](chemin/de/l'image.png)
+	
 
 
 ## Citations 
