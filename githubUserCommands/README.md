@@ -18,10 +18,12 @@ Il existe deux manières de cloner un repository :
 + Cloner en HTTPS est très facile, mais git demande l'authentification à chaque action. Une solution permet de faire retenir l'authentification à git pendant un certain laps de temps :
 
 	$ git config --global credential.helper cache
-	# Set git to use the credential memory cache
+
+Set git to use the credential memory cache
 	
 	$ git config --global credential.helper 'cache --timeout=3600'
-	# Set the cache to timeout after 1 hour (setting is in seconds)
+
+Set the cache to timeout after 1 hour (setting is in seconds)
 
 ## Demarche PDE 
 
