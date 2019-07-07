@@ -1,8 +1,8 @@
 # PANDOC 
 
-## Video Luke smith Notes 
+## Video Luke smith Notes 
 
-### Exemple simple 
+### Exemple simple 
 
 Eire son .md de notes 
 
@@ -22,7 +22,7 @@ Attention mettre espaces entre les lignes :
 
 + List item 3 
 
-### Metadonnées
+### Metadonnées
 
 Se met entre --- : 
 --- 
@@ -55,12 +55,12 @@ colortheme:
 Need vim-pandoc and vim-pandoc-syntax 
 Which by the way modify the .md syntax. I don't know how to deal with that. 
 
-### How does it work ? 
+### How does it work ? 
 
 Add the option --bibliography file.bib when compile 
 
 
-## Md to beamer 
+## Md to beamer 
 
 Previous description : pandoc file.md (--bibliography bib.bib) -t beamer -o file.pdf 
 
