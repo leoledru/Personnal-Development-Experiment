@@ -1,6 +1,6 @@
-# GitHub 
+# GitHub (BG) 
 
-## Commandes utiles 
+## Commandes utiles
 
 + git statuts
 
@@ -8,13 +8,13 @@
 
 + git commit 
 
-## Demarche PDE 
+## Demarche PDE 
 
-### Gérant du rep 
+### Gérant du rep 
 
 Celui qui gère le master (qui mergera les branches parallèles)
 
-### Collaborateurs du rep 
+### Collaborateurs du rep 
 
 Petis commits/modifications: directement edit sur gitHub *et pull request* 
 
@@ -31,5 +31,3 @@ Si on veut faire des grosses modifications hors de la branche master, la procéd
 3. git commit -am "message decrivant changements réalisés" 
 
 4. git push origin (vérifier git remote) titreDeLaBrancheSecondaire
-
-
