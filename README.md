@@ -1,3 +1,7 @@
+# General Keywords List
+
++ **Logiciels graphisme/rendus** (e.g. inkscape, gimp ...)
+
 # Personnal-Development-Experiment
 Espace de projets collaboratifs pour favoriser la création et la motivation à apprendre
 
@@ -13,12 +17,6 @@ Lorsqu'un participant veut partager un nouveau projet il crée un dossier sur le
 + L'auteur du projet est le gérant de celui-ci, il gère la branche master
 + Les collaborateurs utilisent des branches parallèles
 + Le gérant doit checker régulièrement son projet pour la mise à jour des branches parallèles
++ L'auteur actualise la liste des keywords dans le README général : **keywords** (exemple d'application)
 + Les commentaires adressés aux autres sont mis en *italique*
  
-# Keywords List 
-
-+ **Logiciels graphisme/rendus** (e.g. inkscape, gimp ...)
-
-
-
-
