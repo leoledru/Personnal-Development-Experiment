@@ -20,3 +20,5 @@ Lorsqu'un participant veut partager un nouveau projet il crée un dossier sur le
 + L'auteur actualise la liste des keywords dans le README général : **keywords** (exemple d'application)
 + Les commentaires adressés aux autres sont mis en *italique*
  
+ # Why "PDE" ?
+ C'est un détournement de l'abréviation PDE pour "Partial Differential Equation", un outil mathématiques qui nous est cher.
