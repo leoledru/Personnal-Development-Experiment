@@ -6,8 +6,7 @@
 
 + git pull 
 
-+ git commit (-am)
-
++ git commit 
 
 ## Demarche PDE 
 
