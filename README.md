@@ -9,7 +9,7 @@ L'idée de cet espace collaboratif est de créer un supplément de motivation su
 ## Organization
 Lorsqu'un participant veut partager un nouveau projet il crée un dossier sur le github avec le nom du projet et initialise un README. Ce Readme débute par la section "Keywords" qui permet une recherche rapide parmi les projets pour les participants. Ensuite une section "Objectif" qui présente l'intérêt de ce projet.
 
-# Rules
+### Rules
 + L'auteur du projet est le gérant de celui-ci, il gère la branche master
 + Les collaborateurs utilisent des branches parallèles
 + Le gérant doit checker régulièrement son projet pour la mise à jour des branches parallèles
