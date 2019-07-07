@@ -2,6 +2,19 @@
 
 + **Logiciels graphisme/rendus** (e.g. inkscape, gimp ...)
 
++ **geekeries**
+
++ **convertisseur de formats**
+
++ **markdown**
+
++ **rédaction scientifique**
+
++ **beamer**
+
++ **pandoc**
+
+
 # Personnal-Development-Experiment
 Espace de projets collaboratifs pour favoriser la création et la motivation à apprendre
 
