@@ -4,13 +4,13 @@ benjamin.girardot@mio.osupytheas.fr
 
 ## Keywords 
 
-+ geekeries 
++ **geekeries** 
 
-+ convertisseur de formats 
++ **convertisseur de formats**
 
-+ markdown 
++ **markdown** 
 
-+ rédaction scientifique 
++ **rédaction scientifique** 
 
 
 ## Objectifs 
