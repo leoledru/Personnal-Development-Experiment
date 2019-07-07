@@ -38,16 +38,17 @@ colortheme:
 
 ### Styles d'écrite : 
 
-
+<!--
 **bold text** 
 *emphatic text* 
-
+-->
 
 
 ### Images : 
 
+<!-- 
 ![nom de l'image](chemin/de/l'image.png)
-
+-->
 
 
 ## Citations 
