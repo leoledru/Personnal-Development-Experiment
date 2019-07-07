@@ -8,6 +8,21 @@
 
 + git commit 
 
+## Clone SSH vs HTTPS
+
+Cloner un repository depuis le dépôt distant vers le dépôt local (son pc) permet de travailler localement sur celui-ci avant de pusher son travail vers le dépôt distant. Lors du clonage le repository distant est copié localement à l'emplacement où l'utilisateur se trouve. Le repository local créé est directement lié au repository distant, pas besoin d'ajouter un remote pour pusher. 
+Il existe deux manières de cloner un repository : 
+
++ Cloner en ssh permet de ne pas avoir à s'authentifier (login et mdp) à chaque intéraction avec git, cependant cela demande quelques manipulations. Voir : https://help.github.com/en/articles/connecting-to-github-with-ssh
+
++ Cloner en HTTPS est très facile, mais git demande l'authentification à chaque action. Une solution permet de faire retenir l'authentification à git pendant un certain laps de temps :
+
+	$ git config --global credential.helper cache
+	# Set git to use the credential memory cache
+	
+	$ git config --global credential.helper 'cache --timeout=3600'
+	# Set the cache to timeout after 1 hour (setting is in seconds)
+
 ## Demarche PDE 
 
 ### Gérant du rep 
