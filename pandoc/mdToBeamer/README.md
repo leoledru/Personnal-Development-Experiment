@@ -1,4 +1,6 @@
-# PANDOC 
+# PANDOC TO BEAMER (BG) 
+
+benjamin.girardot@mio.osupytheas.fr 
 
 ## Keywords 
 
