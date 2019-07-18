@@ -36,7 +36,7 @@ Donc pour ça, le programme va créer un repertoire workDayJJMMYY/, qui contient
  
  2. Déplacer son script d'intérêt dans ce repertoire: 
    
-   mv workDay /home/username/bin 
+  mv workDay /home/username/bin 
  
  3. Le rendre executable hein (chmod +x workDay)
  
