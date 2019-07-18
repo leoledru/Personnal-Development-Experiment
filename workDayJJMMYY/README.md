@@ -8,7 +8,7 @@ benjamin.girardot@mio.osupytheas.fr
 
 + geekeries
 
-## Objectives
+## Objectives
 
 L'idée est de créer en une commande un **repertoire de travail fonctionnel**, cad un repertoire qui contient un résumé
 des pistes explorées la journée. 
