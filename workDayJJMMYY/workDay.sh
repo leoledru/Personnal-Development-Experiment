@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Script pour créer un repertoire de Worday
+# Prends en argument la date : JJ/MM
+
+mkdir work$1 
+cd work$1 
+# Ici normalement call prog C qui écrit dans README avec sections etc 
+touch README.md 
+mkdir Figures
+cp ~/documents/these/centralFic/createREADME_workday.c . && gcc createREADME_workday.c && ./a.out && rm a.out createREADME_workday.c 
+
