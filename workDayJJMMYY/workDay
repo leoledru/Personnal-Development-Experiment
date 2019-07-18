@@ -8,5 +8,6 @@ cd work$1
 # Ici normalement call prog C qui écrit dans README avec sections etc 
 touch README.md 
 mkdir Figures
+# Attention ici c'est dégueu, c'est mon chemin, A CHANGER 
 cp ~/documents/these/centralFic/createREADME_workday.c . && gcc createREADME_workday.c && ./a.out && rm a.out createREADME_workday.c 
 
