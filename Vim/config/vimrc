@@ -1,1 +1,31 @@
+A COMPLETER, FAIRE PROPRE AVEC SECTIONS ETC
 
+" Set up de base 
+set nocompatible 
+set number
+filetype plugin indent on 
+syntax on 
+set showmatch 
+set smartcase 
+set incsearch 
+set smartindent 
+set autoindent 
+set shiftround 
+set noexpandtab 
+set copyindent 
+set preserveindent 
+set softtabstop=0 
+set shiftwidth=2 
+set tabstop=2
+
+
+" Initialisation de pathogen 
+call pathogen#infect()
+call pathogen#helptags() 
+
+let g:gruvbox_italic='1'
+let g:gruvbox_bold='1'
+let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_italicize_comments='1'
+colorscheme gruvbox
+" let g:gruvbox_(option) = '(value)' --> à mettre avant le colorscheme gruvbox 
