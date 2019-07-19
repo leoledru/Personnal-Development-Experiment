@@ -25,7 +25,7 @@ Par exemple, config peut servir à placer des bouts de vimrc, quand celui-ci dev
 
 1. Installer le gestionnaire de plugins: ici pathogen 
 
-	cd ~.vim
+	cd ~/.vim
 	git clone https://github.com/tpope/vim-pathogen.git
 	cd autoload 
 	ln -s ../pathogen/autoload/pathogen.vim . 
