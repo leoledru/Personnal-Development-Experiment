@@ -1,4 +1,4 @@
-# Faire le café avec VIM ? Pas loin... 
+# Faire le café avec VIM ? Pas loin... (BG) 
 
 ## Une première étape: le .vimrc et .vim/{} 
 
