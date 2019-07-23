@@ -19,6 +19,8 @@ Il y a plusieurs programme de ce genre, par pur hasard je me suis retrouvé à u
 
 ## Intro
 
+Installer tmux : `sudo apt-get install tmux`  
+
 Une commande simple :  
     `$ tmux`
 et bim une session tmux s'ouvre  
