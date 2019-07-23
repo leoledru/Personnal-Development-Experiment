@@ -105,14 +105,14 @@ Dans un travail en cours j'ai toujours besoin de 4 volets ouverts : mon espace o
 
 Première étape, je crée un fichier .tmux.lama qui sera le script (lama c'est le nom que j'ai choisi pour ce script, donc en général on peut faire .tmux.nom_choisi) : `$ vim .tmux.lama`  
 Voici son contenu :  
-    ```  
-    selectp -t 0 # sélectionner le premier volet    
-    splitw -h -p 50 # split ce volet horizontalement en deux parties 50/50    
-    selectp -t 0 # sélectionner le premier volet    
-    splitw -v -p 50 'commande pour ce connecter à la machine de calcul' # séparer le premier volet verticalement 50/50 et se connecter dans le second volet à la machine de calcul    
-    selectp -t 2 # sélectionner le second volet    
-    splitw -v 50 'commande pour ouvrir matlab' # vous avez compris    
-    selectp -t 0 # revenir au premier volet    
+    ```
+    selectp -t 0 # sélectionner le premier volet  
+    splitw -h -p 50 # split ce volet horizontalement en deux parties 50/50  
+    selectp -t 0 # sélectionner le premier volet  
+    splitw -v -p 50 'commande pour ce connecter à la machine de calcul' # séparer le premier volet verticalement 50/50 et se connecter dans le second volet à la machine de calcul  
+    selectp -t 2 # sélectionner le second volet  
+    splitw -v 50 'commande pour ouvrir matlab' # vous avez compris  
+    selectp -t 0 # revenir au premier volet  
     ```  
 Vous avez remarquez que entre des apostrophes ' ' on peut directement écrire une commande à effectuer dès l'ouverture.  
 Ce script étant fait, il reste à pouvoir l'appeler avec un raccourci clavier.  
