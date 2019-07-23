@@ -11,7 +11,7 @@ leo.ledru@univ-smb.fr
 # Objectif
 
 Le terminal donne à première vue des nausées, des sueurs, voire des crises de violence éxacerbées. Cependant à force de m'entendre dire par des personnes de confiance que jouer au geek dans le terminal c'était aussi un gain de temps considérable je me suis penché sur la question.
-Au début, on ouvre des terminal un peu dans tous les sens et on comprend pas bien en quoi ça peut être efficace. En fait, c'est parce qu'une des premières choses à faire est de se faire la main avec un terminal multiplexer pour profiter au mieux du terminal.
+Au début, on ouvre des terminaux un peu dans tous les sens et on comprend pas bien en quoi ça peut être efficace. En fait, c'est parce qu'une des premières choses à faire est de se faire la main avec un terminal multiplexer pour profiter au mieux du terminal.
 Entendez par "terminal multiplexer" un programme qui permet de gérer vos différents terminaux, de jongler entre chacun d'eux facilement, d'ouvrir des terminaux dans des terminaux, en bref de mixer matrix et inception.
 Il y a plusieurs programme de ce genre, par pur hasard je me suis retrouvé à utiliser tmux, alors j'ouvre ce dossier pour partager mon utilisation de cet outil bien pratique.
 
@@ -20,7 +20,7 @@ Il y a plusieurs programme de ce genre, par pur hasard je me suis retrouvé à u
 ## Intro
 
 Une commande simple :
-    $ tmux
+    '$ tmux'
 et bim une session tmux s'ouvre
 En fait ça ressemble à un terminal tout ce qu'il y a de plus normal, ormis en bas où vous pouvez voir quelques nouvelles infos, notamment dans quelle windows de la session tmux ouverte vous vous trouvez, on va y revenir.
 
