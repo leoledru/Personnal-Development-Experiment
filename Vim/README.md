@@ -1,4 +1,4 @@
-# Faire le café avec VIM ? Pas loin... 
+# La belle vi  
 
 ## Une première étape: le .vimrc et .vim/{} 
 
@@ -20,8 +20,20 @@ Le paramétrage de vim ne s'arrête pas au .vimrc (*aller plus loin détails*), 
 	ln -s .vim/vimrc .vimrc
 
 Par exemple, config peut servir à placer des bouts de vimrc, quand celui-ci devriendra assez grand, par thématiques par exemple (*à compléter*)
+## Les colorthemes 
 
-## Le café arrive: les plugins (pathogen) 
+*a faire*
+gruvbox theme utilisé 
+
+## Comment manoeuvrer sa vi (mouvements/déplacements dans vim)
+
+### Les basics 
+
+### Plus complexes 
+
+
+
+## Les plugins (pathogen) 
 
 1. Installer le gestionnaire de plugins: ici pathogen 
 
@@ -54,13 +66,16 @@ Tout simplement, la manip à faire:
 Voilà, maintenant on peut tapper :NERDTree dans vim et voir ce qu'il se passe héhé 
 
 
-## Les colorthemes 
-
 ## Details des plugins 
 
 ### NERDTree
 
-*a faire, notamment comment naviguer entre dossiers et fichier! je suis preneur*
++ ctrl w + w pour swicher entre toggle nerdtree et files (comme pour les split) 
+
++ si on veut NERDTree à chaque fois au lancement de vim, ajouter dans le .vimrc
+
+	" Activation de NERDTree au lancement de vim
+	autocmd vimenter * NERDTree
 
 ### ultisnips & vim-snippets: Qu'a vim à envier aux IDE ? 
 
@@ -135,6 +150,65 @@ Ajouter dans le vimrc:
 + Modifier des surrounds: cs"' 
 
 + supprimer: ds" 
+
+### vim-bookmarks 
+
+Permet de gérer efficacement les marque-pages, outil très puissant de vim aussi. 
+
+Comment ça marche les marque-pages déjà ? 
+
+**Sans vim-bookmarks**
+On met une marque en tappant m + a-z ([A-Z] pour les globaux). 
+	ma 
+
+Pour s'y rendre, on fait `a    (` (ou apostrophe marche aussi)  
+
+**Avec vim-bookmarks** 
+
+La vi devient belle avec vim-bookmarks ! 
+
+Voici ce qu'il "faut" rajouter dans le .vimrc, avec les détails sur ce que ça fait: 
+
+	" vim-bookmarks 
+	" Hihglighting / number of ctermbg is from gruvbox / see git repo for image 
+	" 167 un rouge sympa / 239 un noir plus clair 
+	highlight BookmarkSign ctermbg=NONE ctermfg=132
+	highlight BookmarkLine ctermbg=237 ctermfg=NONE
+
+	" Enables highligh of the marked lines  
+	let g:bookmark_highlight_lines = 1
+
+	" Sign of bookmarks in the left column  
+	let g:bookmark_sign = '♥'
+	"let g:bookmark_sign = '>>'	
+
+	" automatically close bookmarks split when jumping to a bookmark 
+	let g:bookmark_auto_close = 1
+
+	" Next line allows grouping of bookmarks per root directory. This way bookmarks from other projets are not interfering. This is done by saving a file called .vim-bookmartks into the current working directory. CARE, you should add the filemame .vim-bookmarks to your (global) .gitignore file so it doesn't get checked into verson control.
+	let g:bookmark_save_per_working_dir = 1
+	let g:bookmark_auto_save = 1 
+
+	" Uncomment the following line to disable all default key bindings and thus classic m[a-z] work again  
+	" let g:bookmark_no_default_key_mappings = 1
+
+Comment l'utiliser: 
+
++ mm: créé une marque au niveau du curseur (marque sur la ligne) 
++ mn: se déplace à la prochaine marque 
++ mp: se déplace à la précédente 
++ ma: ouvre le toggle pour voir tous les bookmarks / entr pour s'y déplacer (ça ferme le toggle si on a mit l'option dans le .vimrc 
++ mc: clear bookmarks uniquement dans le buffer actuel 
++ mx: clear bookmarks dans tous les buffers 
++ mkk/mjj: fait descendre/monter d'une ligne le bookmark 
++ mgN: le bouge à la ligne N 
+
+Ces trois derniers c'est un peu le "point négatif" je trouve, dans le sens où si on modifie du texte en amont, la marque se déplace aussi. 
+
+
+
+
+
 
 
 

@@ -17,3 +17,4 @@ benjamin.girardot@mio.osupytheas.fr
 
 Ce repository a pour but de documenter différents usages de cet outil MAGIQUE qu'est pandoc. 
 
+
