@@ -1,0 +1,14 @@
+# ignorer les fichiers  .zen 
+*.zen
+
+# ignorer les fichiers d'échanges ~ 
+*~
+
+# ignoger les fichiers de journaux (log) ou fichiers de compilation (.a) 
+*.[ao]
+
+# ignorer graphics/
+*graphics/
+
+# ignore .vim-bookmarks 
+*.vim-bookmarks 
