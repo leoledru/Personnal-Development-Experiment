@@ -1,24 +1,32 @@
 # Analyse statistiques multivariées et analyse spatiale de données sous R
+## Évaluation de la qualité écologique du lac d'Annecy à l'aide du caractère bioindicateur des Chironomidae
 
 oceane.guillor@etu.univ-smb.fr
 
 
 # Keywords
-+ **ACP** ,**RDA** , **anova** ,**indice de Moran** ,**indice de simpson** ,**betadiversité** **mise en forme** ,**graphs**
 
-# Contexte: Évaluation de la qualité écologique du lac d'Annecy à l'aide du caractère bioindicateur des Chironomidae
+* [ACP](##ACP)
+* **[RDA](##RDA)**
+* **[AnOVa](#anova)** 
+* **[indice de Moran](#indice de Moran)** 
+* **indice de simpson** 
+* **betadiversité** 
+* **mise en forme** 
+* **graphs**
+
 
 ## Sommaire
 
-* [Sommaire](#sommaire)
+* [Sommaire](#Sommaire)
 * [Chargement de données spatiales] (#Chargement de données spatiales)
-    * [ 
+    * 
 
 Liste des fonctions utilisées
 [read.delim] (#read.delim)
 [head]
 
-#Le code
+# Le code
 
 On commence par définir le répertoire dans lequel on veut travailler
 'setwd("~/Recherche/Neo/Feder CEN/Annecy/Annecy/subfossils")'
