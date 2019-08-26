@@ -21,6 +21,7 @@
 + **discussion**
 
 + **organisation** 
++ **[R](https://github.com/leoledru/Personnal-Development-Experiment/tree/master/R)** 
 
 # Personnal-Development-Experiment
 Espace de projets collaboratifs pour favoriser la création et la motivation à apprendre
