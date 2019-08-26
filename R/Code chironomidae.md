@@ -1,4 +1,4 @@
-# Analyse multivariée et spatiale de données sous R
+# Analyse statistiques multivariées et analyse spatiale de données sous R
 
 oceane.guillor@etu.univ-smb.fr
 
