@@ -1,7 +1,7 @@
 # Analyse statistiques multivariées et analyse spatiale de données sous R
 ## Évaluation de la qualité écologique du lac d'Annecy à l'aide du caractère bioindicateur des Chironomidae
 
-oceane.guillor@etu.univ-smb.fr
+oceane.guillot@etu.univ-smb.fr
 # EN EDITION!
 
 # Keywords
