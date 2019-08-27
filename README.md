@@ -14,13 +14,10 @@
 
 + **pandoc**
 
-+ **literature**
++ **[literature](https://github.com/leoledru/Personnal-Development-Experiment/tree/master/Literature%20and%20discussions)**
 
-+ **concept**
++ **organisation**
 
-+ **discussion**
-
-+ **organisation** 
 + **[R](https://github.com/leoledru/Personnal-Development-Experiment/tree/master/R)** 
 
 # Personnal-Development-Experiment
