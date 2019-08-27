@@ -34,8 +34,7 @@ On commence par définir le répertoire dans lequel on veut travailler
 
 
 Appel des packages nécessaires pour le code
-
-
+  `library()`
 
 
 ## Chargement de données spatiales
@@ -49,13 +48,12 @@ Voir les premières lignes du dataframe créé
 `head(bat)`
 
 Transformer le tableau en données spatiales (raster) et les afficher 
-
 `library(sp)
 
 a <- SpatialPixelsDataFrame(points = bat[c("X", "Y")],data=bat)
 
 library(adehabitatMA)
-contour <- getcontour(a[,1])'
+contour <- getcontour(a[,1])
 
 library(raster)
 coordinates(bat) <- ~ X + Y
@@ -76,17 +74,15 @@ plot(contour,add=T)
 scalebar(4000,xy=click(),type='bar',divs=4,cex=.5)
 
 library(prettymapr)
-addnortharrow(lwd=1,scale=.5)
+addnortharrow(lwd=1,scale=.5)`
 
 
+# Charger le relevé des capsules (avec coordonnées gps)
+`caps<-read.delim("caps.txt",header=T,dec=",")
+head(caps)`
 
-# Load sites and wave
-caps<-read.delim("caps.txt",header=T,dec=",")
-head(caps)
-
-
-# Convert coordinates from degres to decimal
-library(spaa)
+# Convertir coordonnées de degré à décimal
+`library(spaa)
 
 Ydec<-matrix(NA,nrow=nrow(caps),ncol=1)
 Xdec<-matrix(NA,nrow=nrow(caps),ncol=1)
@@ -102,42 +98,13 @@ library(rgdal)
 coordinates(pts)<-c("Xdec","Ydec")
 class(pts) 
 proj4string(pts) <- CRS("+init=epsg:4326") #epsg4326 = WGS84
-ptsL <- spTransform(pts, CRS("+init=epsg:27572"))# transformation des points en Lambert II
+ptsL <- spTransform(pts, CRS("+init=epsg:27572"))# transformation des points en Lambert II`
 
 
 
-#Corrections
-ptsL@coords[1,1]<-ptsL@coords[1,1]+150
-ptsL@coords[2,1]<-ptsL@coords[2,1]-150
-ptsL@coords[3,1]<-ptsL@coords[3,1]+150
-ptsL@coords[5,1]<-ptsL@coords[5,1]-100;ptsL@coords[5,2]<-ptsL@coords[5,2]+50
-ptsL@coords[6,1]<-ptsL@coords[6,1]+50
-ptsL@coords[7,1]<-ptsL@coords[7,1]+50
-ptsL@coords[8,1]<-ptsL@coords[8,1]+50;ptsL@coords[8,2]<-ptsL@coords[8,2]-1500
-ptsL@coords[9,1]<-ptsL@coords[9,1]+50
-ptsL@coords[10,2]<-ptsL@coords[10,2]+100
-ptsL@coords[11,1]<-ptsL@coords[11,1]-100
-ptsL@coords[12,1]<-ptsL@coords[12,1]-100
-ptsL@coords[13,1]<-ptsL@coords[13,1]+50
-# 14/15 deux prel?vements tr?s proche mais 14 ds cale rocheuse et 15 ds chara
-#Controle police
-ptsL@coords[14,2]<-ptsL@coords[14,2]+50
-ptsL@coords[15,2]<-ptsL@coords[15,2]+50
-ptsL@coords[17,2]<-ptsL@coords[17,2]-50
-ptsL@coords[18,2]<-ptsL@coords[18,2]-50
-ptsL@coords[19,1]<-ptsL@coords[19,1]+1400
-ptsL@coords[20,2]<-ptsL@coords[20,2]-1900
-ptsL@coords[25,1]<-ptsL@coords[25,1]-50
-ptsL@coords[26,2]<-ptsL@coords[26,2]-50
-ptsL@coords[27,1]<-ptsL@coords[27,1]-50
-ptsL@coords[28,1]<-ptsL@coords[28,1]-50
-
-
-points(ptsL,pch=19,col="red",cex=.8)
-text(ptsL@coords-200,paste("S",seq(from=1,to=nrow(caps),by=1),sep=""),cex=.5)
 
 # Inter-site distance
-library(spaa)
+`library(spaa)
 dist <- list(matrix(NA, ncol=1, nrow=nrow(caps)-1))
 for(i in 1:(nrow(caps)-1))
 {
@@ -145,13 +112,13 @@ for(i in 1:(nrow(caps)-1))
 }
 dist #Distance des sites entre eux 
 
-hist(unlist(dist[-which.max(dist)]), las=1 ,ylab="Fr?quence",xlab="Distance inter-sites",nclass=10,col="bisque", main = "Distance inter-sites en fonction de la fr?quence") 
+hist(unlist(dist[-which.max(dist)]), las=1 ,ylab="Fr?quence",xlab="Distance inter-sites",nclass=10,col="bisque", main = "Distance inter-sites en fonction de la frequence")`
 
 
 
 # Variables
-
-#wave energy
+`
+## wave energy
 wave<-read.delim("wave.txt",header=T,dec=",")
 head(wave)
 
@@ -163,7 +130,7 @@ op <- par(mfrow=c(1,1),mar = c(2,2,1,1) + 0.5,mgp = c(1, 0, 0))
 colors<-colorRampPalette(brewer.pal(9,"Blues"))(20)
 plot(bathy,col = colors)
 plot(contour,add=T)
-scalebar(4000,xy=click(),type='bar',divs=4,cex=.5)# cliquer sur l'endroit ou on veut l'?chelle dans la fig.
+scalebar(4000,xy=click(),type='bar',divs=4,cex=.5)  cliquer sur l'endroit ou on veut l'echelle dans la fig.
 
 library(prettymapr)
 addnortharrow(lwd=1,scale=.5)
@@ -231,14 +198,12 @@ occ_litto<-c(2,1,2,1,2,1,2,1,3,3,2,1,3,2,2,1,2,2,2,3,2,2,2,1,1,2,2,2)
 
 var<-data.frame(caps[,1],slope,wave[,2]*1000,occ_litto,ptsL@coords);colnames(var)<-c("site","slope","wave","occ_litto", "Xdec","Ydec")
 var
-var<-var[-c(2,4,6,28),]
+var<-var[-c(2,4,6,28),]`
 
 
 
-
-##########################################
-#Load chiro data
-chiro<-read.delim("chiro_annecy.txt",header=T,dec=",")
+## Charger les données d'échantillonnage des taxons de Chironomidae
+`chiro<-read.delim("chiro_annecy.txt",header=T,dec=",")
 head(chiro)
 str(chiro)
 
@@ -252,11 +217,11 @@ totalcount
 sum(totalcount)
 
 chiro2<-chiro[,1:ncol(chiro)-1]
-chiro2
+chiro2`
 
-#Inspect taxa and site attributes
+# Inspect taxa and site attributes
 
-op <- par(mfrow=c(1,2),mar = c(2,2,1,1) + 0.5,mgp = c(1, 0.2, 0))
+`op <- par(mfrow=c(1,2),mar = c(2,2,1,1) + 0.5,mgp = c(1, 0.2, 0))
 barplot(sort(colSums(chiro2),decreasing=T),las=2,cex.axis=.7,col="lightblue",
         ylab="Total counts of chironomid HC",cex.lab=.7,cex.names =.5,tck=-.01)
 barplot(sort(log10(colSums(chiro2)),decreasing=T),las=2,cex.axis=.7,
@@ -266,35 +231,19 @@ barplot(sort(rowSums(chiro2),decreasing=T),las=2,cex.axis=.7,
 
 
 mean(rowSums(chiro2))
-sd(rowSums(chiro2))
+sd(rowSums(chiro2))`
 
-
-
-#Delete species having less than 5 HC found over all sites
-ncol(chiro2)
-chiro2<-chiro2[,-c(which(colSums(chiro2)<10))]
-ncol(chiro2)
-
-#Delete sites with less than 40 HC 
-nrow(chiro2)
-
-deleted_lines<-which(rowSums(chiro2)<40)
-
-chiro2<-chiro2[-c(deleted_lines),]
-nrow(chiro2) # reste 24/28 sous esp
-
-sum(colSums(chiro2))
 
 
 # Transform to %
-library(vegan)
+`library(vegan)
 chirop<-decostand(chiro2, method = "total", Margin = 1 ) 
-rowSums(chirop) #on v?rifie que ?a fait 100% partout
+rowSums(chirop) #on v?rifie que ?a fait 100% partout`
 
 
 
-###### Multivariate analysis
-library(ade4)
+# Multivariate analysis
+`library(ade4)
 acp <- dudi.pca(chirop)
 op <- par(mfrow=c(1,1),mar = c(2,2,1,1),mgp = c(1, 0.3, 0))
 scatter(acp)
@@ -304,8 +253,6 @@ s.label(acp$li)
 
 inertia.dudi(acp)# % variance explained by axes
 
-
-
 # Which species are the most influencial on PCA axes
 op <- par(mfrow=c(1,2),mar = c(2,4,1,1),mgp = c(1, 0.3, 0))
 #Axis1
@@ -314,15 +261,13 @@ barplot(sort(scores(acp,display="sp")[,1],decreasing=T),las=2,cex.axis=.7,
 
 #Axis2
 barplot(sort(scores(acp,display="sp")[,2],decreasing=T),las=2,cex.axis=.7,
-        ylab="Species contribution to PCA axis2",cex.lab=.7,cex.names =.5,tck=-.01,col="lightblue")
+        ylab="Species contribution to PCA axis2",cex.lab=.7,cex.names =.5,tck=-.01,col="lightblue")`
 
 
 # RDA
-wave = wave[-c(2, 4, 6, 28),]
+`wave = wave[-c(2, 4, 6, 28),]
 slope = slope[-c(2, 4, 6, 28),]
 occ_litto=  occ_litto[-c(2, 4, 6, 28)]
-
-
 
 
 mod1 <- rda(chirop ~ var$slope+var$wave+var$occ_litto)#pas le m?me nombre de variable 28 (Var & wave) et 24 (chirop)
@@ -338,16 +283,15 @@ anova(rda(chirop ~ var$Xdec+var$Ydec),by="terms",permut=9999)
 op <- par(mfrow=c(1,2),mar = c(2,2,1,1),mgp = c(1, 0.3, 0))
 plot(mod1, dis=c("sites"))
 plot(mod1, dis=c("species","cn"))
-plot(mod1)
+plot(mod1)`
 
 
 
 
 
 ######################################################
-# Assess spatial autocorrelation of taxa
-
-ncol(chirop)
+# Autocorrélation spatiale des taxons
+`ncol(chirop)
 
 library(pgirmess)
 
@@ -359,14 +303,10 @@ for (i in 1:15){
      cor <- correlog(coords=var[,5:6]/1000, z=chirop[,i], method="Moran",nbclass=20)
     plot(cor,main=colnames(chirop)[i],tck=-.015,las=1,cex=.8,cex.lab=.5,ylim=c(-1,1))
   }
-   
-}
+}`
 
-
-
-#################
 # Diversity metrics
-
+`
 library(iNEXT)
 dat<-data.frame(t(chiro2))
 dat[1:5,1:10]
@@ -375,23 +315,21 @@ DIV<-iNEXT(dat, q=0, datatype="abundance",se=TRUE, conf=0.95, nboot=999)
 
 ggiNEXT(DIV)
 
-# Extract the results
+  #Extract the results
 metrics<-data.frame(DIV$AsyEst[,c(1,2,4)])
 div<-data.frame(metrics[metrics$Diversity=="Species richness",][,c(1,3)],metrics[metrics$Diversity=="Simpson diversity",][,3])
 colnames(div)<-c("site","rich","simpson")
 div
 
-# Comparison simpson / richness
+ #Comparison simpson / richness
 op<-par(mfrow=c(1,1),mar=c(2,2,1,1)+0.5,mgp=c(1,0.3,0))
 plot(div[,2]~div[,3],xlab="Simpson",ylab="Richness",las=1,cex.axis=.7,pch=19,cex=.7,cex.lab=.7,tck=-.01,ylim=c(5,30))
 summary(lm(div[,2]~div[,3]))
-abline(lm(div[,2]~div[,3]))
-
+abline(lm(div[,2]~div[,3])) `
 
 
 # Richness and divesity analysis
-# main variation along X and limited interactions for richness
-
+ ` main variation along X and limited interactions for richness
 
 anova(lm(div[,2]~var$slope+var$wave+var$occ_litto))
 anova(lm(div[,2]~var$occ_litto+var$slope+var$wave))
@@ -400,7 +338,6 @@ anova(lm(div[,2]~var$occ_litto))
 plot(div[,2]~var$occ_litto,xlab="Anthropisation",ylab="Richness",las=1,col="red",cex.axis=.7,pch=19,cex=1,cex.lab=.7,tck=-.01,ylim=c(5,30))
 summary(lm(div[,2]~var$occ_litto))
 abline(lm(div[,2]~var$occ_litto),lwd=2,col="red")
-
 
 anova(lm(div[,2]~var$slope))
 anova(lm(div[,2]~var$Xdec+var$Ydec))
@@ -411,11 +348,10 @@ anova(lm(div[,3]~var$slope+var$wave+var$occ_litto))
 anova(lm(div[,3]~var$Xdec+var$Ydec))
 
 summary(lm(div[,3]~var$Xdec+var$Ydec))
-
-
+`
 
 # Plotting results on map
-#Map diversity index
+`#Map diversity index
 
 pts2<-data.frame(var$Xdec,var$Ydec);colnames(pts2)<-c("Xdec","Ydec")
 
@@ -443,20 +379,11 @@ addnortharrow(lwd=1,scale=.5)
 
 points(ptsL,pch=19,col="green",cex=(div[,3]/5))
 legend("bottomleft",c("11","8","5","2"),pt.cex=c(11/5,8/5,5/5,2/5),pch=19,col="green")
+`
 
+# Betadiv (Legendre and De Caceres (2013, ELE))
 
-
-
-
-
-
-#####################################
-
-########## Betadiv
-
-# Legendre and De Caceres (2013, ELE)
-# Copy paste the function because the loading using "source" do not work
-source("betadiv.R")
+`source("betadiv.R")
 library(vegan)
 
 beta<-beta.div(chirop, method="none", sqrt.D=FALSE, 
@@ -469,12 +396,12 @@ barplot(SCBD,las=2,cex.axis=.7,
         ylab="SCBD",cex.lab=.7,cex.names =.5,tck=-.01,col="purple")
 
 
-# Assess the relationhsip between SCBD and the species abundance
+#Assess the relationhsip between SCBD and the species abundance
 #chiro2 or chiroh
 plot(beta$SCBD~colMeans(chirop),pch=19,las=1,tck=-.01,col="purple",ylim=c(0,0.25))
 
 
-# Assess significance
+#Assess significance
 mod<-lm(beta$SCBD~colMeans(chirop))
 anova(mod)
 summary(mod)
@@ -508,15 +435,12 @@ points(ptsL,pch=19,col="purple",cex=beta$LCBD*25)
 legend("bottomleft",c("0.15","0.10","0.05","0.01"),pt.cex=c(0.15*25,0.10*25,0.05*25,0.01*25),pch=19,col="purple",cex=.5)
 
 
-
 anova(lm(beta$LCBD~var$slope+var$wave+var$occ_litto))
-anova(lm(beta$LCBD~var$Xdec+var$Ydec))
-
-
+anova(lm(beta$LCBD~var$Xdec+var$Ydec)) `
 
 
 ########
-hist(as.matrix(chirop))
+`hist(as.matrix(chirop))
 
 colors<-colorRampPalette(brewer.pal(9,"Blues"))(20)
 
@@ -530,7 +454,6 @@ for (i in 1:ncol(chirop)){
   points(ptsL,pch=19,col="orange",cex=chirop[,i]*2)
   legend("bottomleft",c("0.5","0.3","0.2","0.1","0.05"),pt.cex=c(0.5*2,0.3*2,0.2*2,0.1*2,0.05*2),pch=19,col="orange",cex=.5)
 }
-
 
 
 op <- par(mfrow=c(2,5),mar = c(2,2,1,1) + 0.5,mgp = c(1, 0, 0))
