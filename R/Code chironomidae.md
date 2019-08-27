@@ -43,12 +43,15 @@ Appel des packages nécessaires pour le code
 
 Charger le fichier contenant les valeurs de bathy
 Arguments: header permet de définir si le document possède une entête (valeur=T pour true ou F), dec permet de définir si la décimale est un point ou une virgule dans le document
+
 `bat<-read.delim("bathyannecy.txt",header=T,dec=",")`
 Voir les premières lignes du dataframe créé
 `head(bat)`
 
 Transformer le tableau en données spatiales (raster) et les afficher 
+
 `library(sp)
+
 a <- SpatialPixelsDataFrame(points = bat[c("X", "Y")],data=bat)
 
 library(adehabitatMA)
