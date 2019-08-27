@@ -16,15 +16,15 @@ oceane.guillot@etu.univ-smb.fr
 * **graphs**
 
 
-## Sommaire
+# Sommaire
 
-* [Sommaire](#Sommaire)
-* [Chargement de données spatiales] (#Chargement de données spatiales)
-    * 
+  * [Sommaire](#Sommaire)
+  * [Chargement de données spatiales](##Chargement de données spatiales)
+  
 
 Liste des fonctions utilisées
-[read.delim] (#read.delim)
-[head]
+*  [read.delim](#read.delim)
+*  [head]
 
 # Le code
 
