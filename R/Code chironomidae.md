@@ -29,7 +29,9 @@ Liste des fonctions utilisées
 # Le code
 
 On commence par définir le répertoire dans lequel on veut travailler
-'setwd("~/Recherche/Neo/Feder CEN/Annecy/Annecy/subfossils")'
+
+`setwd("~/Recherche/Neo/Feder CEN/Annecy/Annecy/subfossils")`
+
 
 Appel des packages nécessaires pour le code
 
@@ -41,12 +43,12 @@ Appel des packages nécessaires pour le code
 
 Charger le fichier contenant les valeurs de bathy
 Arguments: header permet de définir si le document possède une entête (valeur=T pour true ou F), dec permet de définir si la décimale est un point ou une virgule dans le document
-'bat<-read.delim("bathyannecy.txt",header=T,dec=",")'
+`bat<-read.delim("bathyannecy.txt",header=T,dec=",")`
 Voir les premières lignes du dataframe créé
-'head(bat)'
+`head(bat)`
 
 Transformer le tableau en données spatiales (raster) et les afficher 
-'library(sp)
+`library(sp)
 a <- SpatialPixelsDataFrame(points = bat[c("X", "Y")],data=bat)
 
 library(adehabitatMA)
@@ -55,9 +57,9 @@ contour <- getcontour(a[,1])'
 library(raster)
 coordinates(bat) <- ~ X + Y
 gridded(bat) <- TRUE
-bathy<- raster(bat) '
+bathy<- raster(bat)`
 
-'Altitude de la surface du lac
+`Altitude de la surface du lac
 surf_alt <- 447
 bathy <-  surf_alt-bathy
 bathy[bathy <= 0] <- NA
@@ -538,8 +540,7 @@ for (i in c(8,6,10,3,11,5,7,1,9,17)){
   points(ptsL,pch=19,col="orange",cex=chirop[,i]*10)
   legend("bottomleft",c("0.5","0.3","0.2","0.1","0.05"),pt.cex=c(0.5*10,0.3*10,0.2*10,0.1*10,0.05*10),pch=19,col="orange")
 }
-
-'
+`
 
 
 
