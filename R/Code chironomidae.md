@@ -19,7 +19,7 @@ oceane.guillot@etu.univ-smb.fr
 # Sommaire
 
   * [Sommaire](#Sommaire)
-  * [Chargement de données spatiales](##Chargement de données spatiales)
+  * [Chargement de données spatiales](#Chargement de données spatiales)
   
 
 Liste des fonctions utilisées
@@ -37,7 +37,7 @@ Appel des packages nécessaires pour le code
   `library()`
 
 
-## Chargement de données spatiales
+# Chargement de données spatiales
 ### Faire apparaître la batymétrie du lac
 
 Charger le fichier contenant les valeurs de bathy
