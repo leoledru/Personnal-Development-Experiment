@@ -12,6 +12,10 @@
 * class() : donne la nature de l’obj 
 * attributes (matrice1) : permet de connaître les dim d'une matrice
 
+## Graphiques
+* barplot : 
+* hist(): histogramme
+
 ## Dataframe
 * Str() : structure des données
 * Summary : résumer stat descriptives 
