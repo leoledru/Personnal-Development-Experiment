@@ -1,4 +1,4 @@
-# La belle vi  
+# La belle vi (test modif) 
 
 ## Une première étape: le .vimrc et .vim/{} 
 
