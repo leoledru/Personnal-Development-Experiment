@@ -1,0 +1,10 @@
+numpy
+scipy
+matplotlib
+pandas
+path.py
+scikit-learn
+seaborn
+holoviews
+hvplot
+pyswarms
